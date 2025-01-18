@@ -36,10 +36,10 @@ The following requirements are used in this project and to run this project, you
 ## Datasets
 | Detection                       | Dataset                                                                                                                                                          |
 |:--------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ball detection         | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/) |
-| Player detection         | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/) |
-| Goal Keeper detection           | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/)    |
-| Referee detection | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/)   |
+| Ball detection         | [![Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/) |
+| Player detection         | [![Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/) |
+| Goal Keeper detection           | [![Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/)    |
+| Referee detection | [![Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/)   |
 
 ## Models
 - Grounding DINO
