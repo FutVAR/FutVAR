@@ -1,7 +1,7 @@
 [![Release Notes](https://img.shields.io/badge/releases-view-blue)](https://github.com/FutVAR)
 [![Contribution](https://img.shields.io/badge/contribute-welcome-green)](https://github.com/FutVAR)
 [![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-view-white)](https://github.com/FutVAR)
-[![License](https://img.shields.io/badge/license-mit-red)](https://github.com/FutVAR)
+[![License](https://img.shields.io/badge/license-n/a-red)](https://github.com/FutVAR)
 [![Versions](https://img.shields.io/badge/versions-1.0.0-orange)](https://github.com/FutVAR)
 [![Documentation](https://img.shields.io/badge/documentation-view-violet)](https://github.com/FutVAR)
 [![Discussions](https://img.shields.io/badge/discussions-view-yellow)](https://github.com/FutVAR)
@@ -13,26 +13,17 @@ Football, a sport where every second has its significance, a sport where every c
 
 - [Introduction](##introduction)
 - [Features](#f#eatures)
-- [Algorithms](##algorithms)
 - [Requirements](##requirements)
-- [Outcome](##outcome)
-- [Resources](##resources)
+- [Models](##models)
 - [Challenges](##challenges)
 - [Conclusion](##conclusion)
 
 ## Introduction
-FutVAR stands for "Futebol Video Analytics and Reporting System". FutVAR is a football video analytics and monitoring system that leverages computer vision technology to revolutionize traditional methodologies in  football analysis. By utilizing advanced object detection models like YOLO, ByteTrack, Faster R-CNN, and Detectron2, and leveraging OpenCV for achieving state-of-the-art performance on image and video processing, FutVAR provides a comprehensive analysis of key football metrics, including passes, fouls, possessions, goals, and other critical game evaluations. 
-FutVAR ensures the integrity of rules and regulations by accurately tracking players, the ball, and the ball's path; distinguishing between teams by their jerseys; identifying referees and goalkeepers; and detecting red and yellow card incidents. The system employs sophisticated video processing techniques using OpenCV to extract meaningful insights from game footage, enhancing the quality and speed of analysis. Through automating these aspects of game analysis, FutVAR offers a reliable tool for enhancing the development and evaluation of football matches. With capabilities like real-time video processing, motion tracking, and event detection, FutVAR is a game-changer in football analytics.
+FutVAR stands for "Futebol Video Analytics and Reporting System". FutVAR is a football video analytics and monitoring system that leverages computer vision technology to revolutionize traditional methodologies in  football analysis. By utilizing advanced object detection models like YOLO, ByteTrack, Faster R-CNN, and Detectron2, and leveraging OpenCV for achieving state-of-the-art performance on image and video processing, FutVAR provides a comprehensive analysis of key football metrics, including passes, fouls, possessions, goals, and other critical game evaluations. FutVAR ensures the integrity of rules and regulations by accurately tracking players, the ball, and the ball's path; distinguishing between teams by their jerseys; identifying referees and goalkeepers; and detecting red and yellow card incidents. The system employs sophisticated video processing techniques using OpenCV to extract meaningful insights from game footage, enhancing the quality and speed of analysis. Through automating these aspects of game analysis, FutVAR offers a reliable tool for enhancing the development and evaluation of football matches. With capabilities like real-time video processing, motion tracking, and event detection, FutVAR is a game-changer in football analytics.
 
 ## Requirements
-The following modules are used in this project and to run this project, you need to have installed these modules:
-- YOLO: AI object detection model
-- Kmeans: Pixel segmentation and clustering to detect t-shirt color
-- Optical Flow: Measure camera movement
-- Perspective Transformation: Represent scene depth and perspective
-- Speed and distance calculation per player
+The following requirements are used in this project and to run this project, you need to have installed these modules:
 - Python 3.x
-- PyTorch
 - ultralytics
 - autodistil
 - detectron2
@@ -41,6 +32,12 @@ The following modules are used in this project and to run this project, you need
 - NumPy
 - Matplotlib
 - Pandas
+
+## Models
+- Grounding DINO
+- YOLOv7, YOLOv8, YOLOv9, YOLOv10, YOLOv11, SSD
+- Faster R-CNN, Mask R-CNN
+- DETR
 
 ## Challenges
 We welcome contributions from anyone who loves computer vision and shares our passion! Together, we can build powerful open-source tools for sports analytics. Here are the main challenges we're looking to tackle:
