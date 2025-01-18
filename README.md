@@ -24,16 +24,13 @@ Football, a sport where every second has its significance, a sport where every c
 FutVAR stands for "Futebol Video Analytics and Reporting System". FutVAR is a football video analytics and monitoring system that leverages computer vision technology to revolutionize traditional methodologies in  football analysis. By utilizing advanced object detection models like YOLO, ByteTrack, Faster R-CNN, and Detectron2, and leveraging OpenCV for achieving state-of-the-art performance on image and video processing, FutVAR provides a comprehensive analysis of key football metrics, including passes, fouls, possessions, goals, and other critical game evaluations. 
 FutVAR ensures the integrity of rules and regulations by accurately tracking players, the ball, and the ball's path; distinguishing between teams by their jerseys; identifying referees and goalkeepers; and detecting red and yellow card incidents. The system employs sophisticated video processing techniques using OpenCV to extract meaningful insights from game footage, enhancing the quality and speed of analysis. Through automating these aspects of game analysis, FutVAR offers a reliable tool for enhancing the development and evaluation of football matches. With capabilities like real-time video processing, motion tracking, and event detection, FutVAR is a game-changer in football analytics.
 
-## Modules Used
-The following modules are used in this project:
+## Requirements
+The following modules are used in this project and to run this project, you need to have installed these modules:
 - YOLO: AI object detection model
 - Kmeans: Pixel segmentation and clustering to detect t-shirt color
 - Optical Flow: Measure camera movement
 - Perspective Transformation: Represent scene depth and perspective
 - Speed and distance calculation per player
-
-## Requirements
-To run this project, you need to have the following requirements installed:
 - Python 3.x
 - PyTorch
 - ultralytics
