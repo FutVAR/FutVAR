@@ -33,6 +33,14 @@ The following requirements are used in this project and to run this project, you
 - Matplotlib
 - Pandas
 
+## Datasets
+| Detection                       | Dataset                                                                                                                                                          |
+|:--------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ball detection         | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/) |
+| Player detection         | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/) |
+| Goal Keeper detection           | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/)    |
+| Referee detection | [![Download Dataset](https://app.roboflow.com/images/download-dataset-badge.svg)](https://universe.roboflow.com/futvar-n32uw/futvar/)   |
+
 ## Models
 - Grounding DINO
 - YOLOv7, YOLOv8, YOLOv9, YOLOv10, YOLOv11, SSD
@@ -50,3 +58,15 @@ We welcome contributions from anyone who loves computer vision and shares our pa
 
 ## Conclusion
 This project aims to detect and track players, referees, and footballs in a video using YOLO, one of the best AI object detection models available. We will also train the model to improve its performance. Additionally, we will assign players to teams based on the colors of their t-shirts using Kmeans for pixel segmentation and clustering. We can measure a team's ball acquisition percentage in a match with this information. We will also use optical flow to measure camera movement between frames, enabling us to measure a player's movement accurately. Furthermore, we will implement perspective transformation to represent the scene's depth and perspective, allowing us to measure a player's movement in meters rather than pixels. Finally, we will calculate a player's speed and the distance covered. This project covers various concepts and addresses real-world problems, making it suitable for both beginners and experienced machine learning engineers.
+
+<!--
+## contribution
+
+We love your input! Please see our [contributing guide](https://github.com/futvar/blob/main/CONTRIBUTING.md) to get started. Thank you 🙏 to all our contributors!
+
+<p align="center">
+    <a href="https://github.com/roboflow/supervision/graphs/contributors">
+      <img src="https://contrib.rocks/image?repo=roboflow/supervision" />
+    </a>
+</p>
+-->
