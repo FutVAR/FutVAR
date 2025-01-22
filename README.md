@@ -43,9 +43,12 @@ The following requirements are used in this project and to run this project, you
 
 ## Models
 - Grounding DINO
-- YOLOv7, YOLOv8, YOLOv9, YOLOv10, YOLOv11, SSD
-- Faster R-CNN, Mask R-CNN
+- YOLOv7, YOLOv8, YOLOv9, YOLOv10, YOLOv11
+- Faster R-CNN
 - DETR
+- CNN-RNN
+- CNN-LSTM
+- Transformer
 
 ## Challenges
 We welcome contributions from anyone who loves computer vision and shares our passion! Together, we can build powerful open-source tools for sports analytics. Here are the main challenges we're looking to tackle:
