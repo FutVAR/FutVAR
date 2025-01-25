@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FutVAR - Futebol Video Analytics and Reporting System</title>
+    <!-- consider to add our icon here -->
+    <!-- <link rel="icon" href="" type="image/icon type"> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="website/css/bulma.min.css">
+    <link rel="stylesheet" href="website/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="website/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="website/css/fontawesome.all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./website/javascript/bulma-carousel.min.js"></script>
+    <script src="./website/javascript/bulma-slider.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bootstrap4.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+    <script defer src="website/javascript/fontawesome.all.min.js"></script>
+    <!-- <script src="website/javascript/peity-vanilla.js"></script> -->
+
+
+    <!-- below we load some js scripts -->
+    <script src="website/javascript/benchmark_table.js" type="module"></script>
+
+    <link rel="stylesheet" href="website/css/index.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7GJ4FYMY9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-C7GJ4FYMY9');
+    </script>
+
+    <!-- MathJax script -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+
+    <noscript>
+        <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101339888ns.gif" /></p>
+    </noscript>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var toggles = document.querySelectorAll('.toggle-section');
+        toggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+            var content = document.getElementById(toggle.getAttribute('aria-controls'));
+            var toggleIcon = toggle.children[1].children[0];
+            content.classList.toggle('is-active');
+            if (content.classList.contains('is-active')) {
+                toggleIcon.style.transition = 'transform 0.3s ease';
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                toggleIcon.style.transition = 'transform 0.3s ease';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+            });
+        });
+        });
+      </script>
+
+    <style>
+        .collapse-content {
+          display: none;
+          margin-top: 10px;
+        }
+        .collapse-content.is-active {
+          display: block;
+        }
+        /* .toggle-section .icon.is-small {
+          transition: transform 0.3s ease;
+        } */
+        /* .toggle-section .fa-angle-up {
+          transform: rotate(180deg);
+        } */
+      </style>
+</head>
+
+<body>
+    
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title is-bold">
+                            <img src="website/img/futvar-logo.jpg" alt="logo" style="height: 1.9em; margin-bottom: 15px;"/>
+                            FutVAR - Futebol Video Analytics and Reporting System
+                        </h1>
+                        <!-- <p>Revolutionalizing Sports</p> -->
+                        <!-- <p style="color: darkred; font-weight: bold;">!</p> -->
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                              <a href="https://github.com/bikashkumarsah">Bikash Sah</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                              <a href="https://github.com/theranjitraut">Ranjit Raut</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                              <a href="https://github.com/sagunrai">Sagun Rai</a><sup>1</sup>,
+                            </span>
+                            <!-- <span class="author-block">
+                              <a href="https://zhyjiang.github.io">Zhongyu Jiang</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                              <a href="https://people.ece.uw.edu/hwang/">Jenq-Neng Hwang</a><sup>1</sup>
+                            </span> -->
+                          </div>
+            
+                
+                          
+                
+                          <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Department of Artificial Intelligence (DoAI), Kathmandu University</span>
+                            <!-- <span class="author-block"><sup>2</sup>Northwestern University,</span>
+                            <span class="author-block"><sup>3</sup>Amazon,</span>
+                            <span class="author-block"><sup>4</sup>MIT</span> -->
+                          </div>
+                          <!-- <div class="'is-size-5 publication-authors">
+                            <span class="author-block"><sup>†</sup>Equal contribution</span>
+                          </div> -->
+                          <!-- <div class="'is-size-4 publication-authors">
+                            <span class="author-block" style="color: darkred; font-weight: bold;">NeurIPS 2024 D&B (Oral)</span>
+                          </div> -->
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                 <!-- <span class="link-block">
+                                    <a class="btn btn-outline-dark"
+                                     role="button">
+                                    &nbsp;
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span>&nbsp;&nbsp;Paper (Coming Soon)</span>
+                                    </a> &nbsp;&nbsp;
+                                 </span> -->
+                                <!-- <span class="link-block">
+                                    <a href="#" class="btn btn-outline-dark"
+                                        role="button">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                            <i class="ai ai-roboflow"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a> &nbsp;&nbsp;
+                                </span> -->
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/FutVAR" class="btn btn-outline-dark" role="button">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Repo</span>
+                                    </a> &nbsp;&nbsp;
+                                </span>
+                                <!-- Raw Result Link. -->
+                                <!-- <span class="link-block">
+                                    <a href="#" class="btn btn-outline-dark" role="button">
+                                        <span class="icon">
+                                            <i class="fab fa-google-drive"></i>
+                                        </span>
+                                        <span>Raw Results</span>
+                                    </a> &nbsp;&nbsp;
+                                </span> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Add the video element here -->
+<!--     <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+        <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/data/eagent.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> -->
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop has-text-centered">
+        <div class="hero-body">
+            <video id="teaser" autoplay muted loop playsinline controls width="50%">
+                <source src="./website/videos/futvar.mp4" type="video/mp4">
+            </video>
+            <figcaption  style="font-style: italic; text-align: center;">
+                FutVAR (2024)
+            </figcaption>
+            <br>
+                <video id="teaser" autoplay muted loop playsinline controls width="49%" preload="auto">
+                    <source src="./website/videos/vid1.mp4" type="video/mp4">
+                </video>
+                <video id="teaser" autoplay muted loop playsinline controls width="49%" preload="auto">
+                    <source src="./website/videos/vid2.mp4" type="video/mp4">
+                </video>
+                <figcaption  style="font-style: italic; text-align: center;">
+                    FutVAR (2024)
+                </figcaption>
+                <br>
+                <video id="teaser" autoplay muted loop playsinline controls width="49%" preload="auto">
+                    <source src="./website/videos/vid3.mp4" type="video/mp4">
+                </video>
+                <video id="teaser" autoplay muted loop playsinline controls width="49%" preload="auto">
+                    <source src="./website/videos/vid4.mp4" type="video/mp4">
+                </video>
+                <br>
+                <video id="teaser" autoplay muted loop playsinline controls width="49%" preload="auto">
+                    <source src="./website/videos/vid6.mp4" type="video/mp4">
+                </video>
+                <video id="teaser" autoplay muted loop playsinline controls width="49%" preload="auto">
+                    <source src="./website/videos/vid7.mp4" type="video/mp4">
+                </video>
+                <figcaption  style="font-style: italic; text-align: center;">
+                    FutVAR (2024)
+                </figcaption>
+                <br>
+                <video id="teaser" autoplay muted loop playsinline controls style="aspect-ratio: 16/9; width: 60%;" preload="auto">
+                    <source src="./website/videos/vid7.mp4" type="video/mp4">
+                </video>
+                <video id="teaser" autoplay muted loop playsinline controls style="aspect-ratio: 16/9; width: 60%;" preload="auto">
+                    <source src="./website/videos/vid8.mp4" type="video/mp4">
+                </video>
+                <figcaption  style="font-style: italic; text-align: center;">
+                    FutVAR (2024)
+                </figcaption>
+            </div>
+            <div class="disclaimer">
+                <p style="font-style: italic;">*Disclaimer: The videos included in this demonstration are the property of their respective owners. They are used only for academic and research purposes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="abstract">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-2">Introduction</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            "FutVAR (Futebol Video Analytics and Reporting System)" is a football video analytics and monitorings system that leverages computer vision technology to revolutionize traditional methodologies in football analysis. By utilizing advanced object detection models like YOLO, Grounding DINO, ByteTrack, Faster R-CNN, Mask R-CNN, SSD, DETR, Detectron2, and leveraging OpenCV for achieving state-of-the-art performance on image and video processing, FutVAR provides comprehensive analysis of key football metrics, including passes, fouls, possessions, goals, and other critical game evaluations. FutVAR ensures the integrity of rules and regulations by accurately tracking players, the ball, and the ball's path; distinguishing between teams by their jerseys; identifying referees and goalkeepers; and detecting red and yellow card incidents. The system employs sophisticated video processing techniques using OpenCV to extract meaningful insights from game footage, enhancing the quality and speed of analysis. Through automating these aspects of game analysis, FutVAR offers a reliable tool for enhancing the development and evaluation of football matches. With capabilities like real-time video processing, motion tracking, and event detection, FutVAR is a game changer in football analytics.
+                        </p>
+                    </div>
+                    <figure>
+                        <img src="website/img/futvar-block-diagram.png" alt="Embodied agent interface overview." class="EAgent_overview_image"/>
+                        <figcaption  style="font-style: italic;">
+                            <b>Figure 1:</b> FutVAR (2024)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="section" id="abstract">
+        <div class="container is-max-desktop">
+            <!-- Result. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-2">Results</h2>
+                    <figure>
+                        <img src="website/img/futvar-block-diagram.png" alt="Embodied agent interface overview." class="EAgent_overview_image"/>
+                        <figcaption  style="font-style: italic;">
+                            <b>Table 1:</b> FutVAR (2024)
+                        </figcaption>
+                    </figure>
+                    <br>
+                    <figure>
+                        <img src="website/img/futvar-block-diagram.png" alt="Embodied agent interface overview." class="EAgent_overview_image" style="width: 50%;"/>
+                        <figcaption  style="font-style: italic;">
+                            <b>Table 2:</b> FutVAR (2024)
+                        </figcaption>
+                    </figure>
+                    <br>
+                    <figure>
+                        <img src="website/img/futvar-block-diagram.png" alt="Embodied agent interface overview." class="EAgent_overview_image" style="width: 90%;"/>
+                        <figcaption  style="font-style: italic;">
+                            <b>Table 3:</b> FutVAR (2024)
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+        
+    <hr>
+    
+
+    <!-- <section class="section" id="dataset_viewer">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="title is-2" style="text-align: center;">Dataset Viewer</h2>
+                <br>
+                
+            </div>
+        </div>
+    </section> -->
+<!-- 
+    <section class="section" id="embodied_agent_interface_detail">
+        <div class="container is-max-desktop">
+            <div class="hero-body"> -->
+                
+                
+                <!-- <div class="columns is-centered m-6">
+                    <div class="column is-max-desktop has-text-centered">
+                      <h2 class="title is-4" id="visualization">Visualization</h2>
+                      <iframe src="visualizer/explore.html" style="width: 100%;min-height: 100vh; border-radius: 20px;"></iframe>
+                    </div>
+                </div> -->
+                
+            <!-- </div>
+        </div>
+
+    </section> -->
+
+    <!-- <section class="section" id="evaluation">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre>
+            @misc{yang2024samurai,
+                  title={SAMURAI: Adapting Segment Anything Model for Zero-Shot Visual Tracking with Motion-Aware Memory}, 
+                  author={Cheng-Yen Yang and Hsiang-Wei Huang and Wenhao Chai and Zhongyu Jiang and Jenq-Neng Hwang},
+                  year={2024},
+                  eprint={2411.11922},
+                  archivePrefix={arXiv},
+                  primaryClass={cs.CV},
+                  url={https://arxiv.org/abs/2411.11922}, 
+            }
+            </pre>
+        </div>
+    </section> -->
+
+    <footer class="footer">
+        <div align="center" class="container">
+            <div class="columns is-centered">
+                <div class="content is-small">
+                    FutVAR - Futebol Video Analytics and Reporting System (2024)
+                    <!-- This website templated is borrowed from <a
+                        href="https://github.com/nerfies/nerfies.github.io">nerfies</a>. -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>
